@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 
 // Async function to get all rooms
 async function deleteRoom(roomId) {
-  const sessionCookie = cookies().get("appwrite-session");
+  const sessionCookie = await cookies().get("appwrite-session"); 
   if (!sessionCookie) {
     redirect("/login");
   }

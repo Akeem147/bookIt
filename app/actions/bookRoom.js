@@ -10,7 +10,8 @@ import checkRoomAvailability from "../actions/checkRoomAvailability";
 
 // Async function to get all rooms
 async function bookRoom(previousState, formData) {
-  const sessionCookie = cookies().get("appwrite-session");
+  
+  const sessionCookie = await cookies().get("appwrite-session"); 
   if (!sessionCookie) {
     redirect("/login");
   }

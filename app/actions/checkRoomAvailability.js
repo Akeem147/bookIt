@@ -16,7 +16,7 @@ function dateRangesOverlap(checkInA, checkOutA, checkInB, checkOutB) {
 
 // Async function to get all rooms
 async function checkRoomAvailability(roomId, checkIn, checkOut) {
-  const sessionCookie = cookies().get("appwrite-session");
+  const sessionCookie = await cookies().get("appwrite-session"); 
   if (!sessionCookie) {
     redirect("/login");
   }

@@ -6,11 +6,6 @@ export default async function Home() {
   // Fetch rooms data
   const rooms = await getAllRooms();
 
-  // Revalidation should be triggered AFTER fetching data, NOT in the render
-  // Trigger revalidation AFTER data is fetched, or through another action (e.g., button click, API call)
-  // await revalidateHome(); // Make sure this is not blocking your render
-    // await revalidateHome();
-
   return (
     <>
       <Heading title="Available Rooms" />

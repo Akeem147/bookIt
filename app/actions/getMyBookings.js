@@ -8,7 +8,7 @@ import checkAuth from "./checkAuth";
 
 // Async function to get all rooms
 async function getMyBookings() {
-  const sessionCookie = cookies().get("appwrite-session");
+  const sessionCookie = await cookies().get("appwrite-session"); 
   if (!sessionCookie) {
     redirect("/login");
   }
